@@ -1,13 +1,21 @@
-// TodoItem.js
 import React from 'react';
 import { useTodos } from './TodoContext';
 
-export default function TodoItem({ todo }) {
+interface TodoItemProps {
+  todo: {
+    id: number;
+    text: string;
+    completed: boolean;
+  };
+}
+
+const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
   const { deleteTodo, toggleTodo } = useTodos();
 
   return (
     <li>
       <input
+        title='do'
         type="checkbox"
         checked={todo.completed}
         onChange={() => toggleTodo(todo.id)}
@@ -19,3 +27,5 @@ export default function TodoItem({ todo }) {
     </li>
   );
 }
+
+export default TodoItem;

@@ -1,12 +1,11 @@
-// TodoForm.js
 import React, { useState } from 'react';
 import { useTodos } from './TodoContext';
 
-export default function TodoForm() {
+const TodoForm: React.FC = () => {
   const [text, setText] = useState('');
   const { addTodo } = useTodos();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!text.trim()) return;
     addTodo(text);
@@ -25,3 +24,5 @@ export default function TodoForm() {
     </form>
   );
 }
+
+export default TodoForm;

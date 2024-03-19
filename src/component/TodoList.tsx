@@ -1,9 +1,8 @@
-// TodoList.js
 import React from 'react';
 import { useTodos } from './TodoContext';
 import TodoItem from './TodoItem';
 
-export default function TodoList() {
+const TodoList: React.FC = () => {
   const { todos } = useTodos();
 
   return (
@@ -14,3 +13,5 @@ export default function TodoList() {
     </ul>
   );
 }
+
+export default TodoList;

@@ -1,13 +1,15 @@
-import Title from './component/Title'
+import Title from "./component/Title";
+import Input from "./component/Input";
 
-interface Title{
-
-}
+interface Title {}
 
 function App() {
   return (
-    <Title />
-  )
+    <div>
+      <Title />
+      <Input />
+    </div>
+  );
 }
 
 export default App;

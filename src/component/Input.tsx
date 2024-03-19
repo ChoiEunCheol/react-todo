@@ -1,11 +1,7 @@
 import React,{ useState } from 'react';
 
-interface InputValue {
-    value: string;
-}
-
 function Input (){
-    const [inputValue, setInputValue] = useState<InputValue>( {value:''});
+    const [inputValue, setInputValue] = useState<String>('');
     
     const SaveInputData = () => {
         console.log(inputValue);
@@ -15,7 +11,7 @@ function Input (){
         <div>
         <input 
         placeholder="할 일을 추가하세요"
-        onChange={(e) => setInputValue({ value: e.target.value })}
+        onChange={(e) => setInputValue( e.target.value )}
         >
         </input>
         <button title="submit" type="submit" onClick={SaveInputData}> 🔎 </button>

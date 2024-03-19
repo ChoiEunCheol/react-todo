@@ -4,8 +4,11 @@ function Input (){
     const [inputValue, setInputValue] = useState<string>('');
     
     const SaveInputData = () => {
-        console.log(inputValue);
-        window.localStorage.setItem('todo',inputValue)
+        const LSArray = window.localStorage.getItem('todo-List');
+        const LSArray2 = LSArray ? JSON.parse(LSArray) : [];
+        LSArray2.push(inputValue);
+        window.localStorage.setItem('todo-List', JSON.stringify(LSArray2));
+        console.log(window.localStorage.getItem('todo-List'));
     }
 
     return (

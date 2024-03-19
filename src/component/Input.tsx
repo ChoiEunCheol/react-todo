@@ -1,10 +1,11 @@
 import React,{ useState } from 'react';
 
 function Input (){
-    const [inputValue, setInputValue] = useState<String>('');
+    const [inputValue, setInputValue] = useState<string>('');
     
     const SaveInputData = () => {
         console.log(inputValue);
+        window.localStorage.setItem('todo',inputValue)
     }
 
     return (
